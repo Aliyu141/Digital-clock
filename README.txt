@@ -1,68 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content=
-    "width=device-width, initial-scale=1.0">
-    <title>Digital Clock</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="clock">5:15:45</div>
  
-    <script src="script.js"></script>
-</body>
-</html>
-//CSS//
+Digital Clock
+A simple digital clock web application that displays the current time in 12-hour format with AM/PM indication. The clock is designed using HTML, styled with CSS, and powered by JavaScript.
 
+Files Included
+index.html
+The main HTML file that contains the structure of the digital clock.
+Includes meta tags for character set and viewport settings.
+Links to the external styles in "style.css" and the JavaScript logic in "script.js".
+Displays the current time inside a styled div element with the id "clock"
 
-#clock {
-    font-size: 96px;
-    width: 500px;
-    margin: 200px;
-    text-align: center;
-    border: 2px solid black;
-    border-radius: 20px;
-    background-color: bisque;
-}
-//SCRIPT//
-setInterval(showTime, 1000);
- 
-// Defining showTime funcion
-function showTime() {
-    // Getting current time and date
-    let time = new Date();
-    let hour = time.getHours();
-    let min = time.getMinutes();
-    let sec = time.getSeconds();
-    am_pm = "AM";
- 
-    // Setting time for 12 Hrs format
-    if (hour >= 12) {
-        if (hour > 12) hour -= 12;
-        am_pm = "PM";
-    } else if (hour == 0) {
-        hr = 12;
-        am_pm = "AM";
-    }
- 
-    hour =
-        hour < 10 ? "0" + hour : hour;
-    min = min < 10 ? "0" + min : min;
-    sec = sec < 10 ? "0" + sec : sec;
- 
-    let currentTime =
-        hour +
-        ":" +
-        min +
-        ":" +
-        sec +
-        am_pm;
- 
-    // Displaying the time
-    document.getElementById(
-        "clock"
-    ).innerHTML = currentTime;
-}
- 
-showTime();
+style.css
+Contains the CSS styles for the digital clock.
+Defines the appearance of the clock, including font size, width, margin, text alignment, borders, border-radius, and background color.
+
+script.js
+Implements the JavaScript logic for updating and displaying the current time.
+Uses the setInterval function to update the time every second.
+Defines the showTime function to retrieve the current time and format it in 12-hour format with AM/PM
+Usage
+Simply open the index.html file in a web browser to view and interact with the digital clock.
